@@ -1,0 +1,7 @@
+Cory McDowell
+
+1. I have some experience with web architecture. This past summer, I had an internship at Amazon.com. There I wrote JavaScript code to perform unit-tests on DOJO widgets on an internal platform. I ran these tests on an internally-developed DOH testing portal. I have very brief experience writing HTML. I am an EECS undergrad, so I have experience with Java, Python, and C.
+
+2. One of my favorite features on Google's Chrome browser is the ability to add search engines to easily search on your favorite websites by entering your predetermined shortcut and pressing the 'tab' key. My other favorite feature is incognito browsing, which enables users to browse the web without leaving cookies or keeping track of my history.
+
+On Mozilla Firefox, my favorite feature is the firebug plugin. This plugin allows developers to easily view a page's source code and provides a DOM and JavaScript console. My second favorite feature is the browser's ability to google search when you do not type a url in the address bar.
