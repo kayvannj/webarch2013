@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Madlibs!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    </head>
+    <body>
+    	<h1 style="text-align:center;"><img src="madlibs-logo.png" alt="MadLibs Logo" height="300" width="1000"></h1>
+
+		<form id="madlip-input">
+			<label>
+				Enter a person's name
+				<input id="name" type="text">
+			</label>
+			<br>
+			<br>
+			<label>
+				Enter a town's name
+				<input id="town" type="text">
+			</label>
+			<br>
+			<br>
+			<label>
+				Number
+				<input id="num" type="number">
+			</label>
+			<br>
+			<br>
+			<label>
+				<strong>Location: </strong>
+				<input type="radio" name="location" id="location_cave" value="Cave">
+				<input type="radio" name="location" id="location_haunted_house" value="Haunted House">
+			</label>
+			<br>
+			<br>
+			<label>
+				<strong>Villain: </strong>
+				Vampire<input type="checkbox" id="vampire" value="value1">
+				Dragon<input type="checkbox" id="dragon" value="value2">
+			</label>
+			<br>
+			<br>
+			<label>
+				Event
+				<select id="event">
+					<option value="o1">were each slain through the heart with a sword</option>
+					<option value="o2">fell into a burning pit of fire</option>
+					<option value="o3">burned internally by the aroma of garlic</option>
+					<option value="o4">melted by the light of the sun</option>
+				</select>
+			</label>
+			<br>
+			<br>
+			<label>
+				Create MadLib
+				<input type="submit" value="submit" onclick="validate2()">
+			</label>
+			<br>
+		<form>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="madlib-output">
+		</div>
+
+        
+        <!-- You may add Javascript functions below -->
+        <script>
+			function validate2() {
+				/* check if name field is empty */
+				var name = document.getElementById("name").value;
+				if (!name) {
+					alert("Enter a person's name!");
+				}
+				/* check if town field is empty */
+				var town = document.getElementById("town").value;
+				if (!town) {
+					alert("Enter a town's name!");
+				}
+				/* verify number entered */
+				var reg = new RegExp('^\\d*$');
+				num = document.getElementById("num").value;
+				if (!reg.test(num) || !num) {
+					alert("Enter a number!");
+				}
+				/* Ensure at least one radio button on page is checked */
+				if(document.getElementById('location_cave').checked) {
+				  var location = "cave"
+				}else if(document.getElementById('location_haunted_house').checked) {
+				  location = "haunted house"
+				} else {
+					alert("Select a location!")
+				}
+				/* Ensure at least one checkbox on page is checked */
+    			if (document.getElementById('vampire').checked) {
+    				var villain = "vampire";
+    			} else if (document.getElementById('dragon').checked) {
+    				var villain = "dragon";
+    			} else {
+    				alert("Select a villain!");
+    			}
+
+    			var event = $("#event").val();
+
+    			/* madlib input is validated, proceed to create madlib */
+    			document.getElementById("madlib-output").innerText = 
+    				"Once upon a time, there was a hero named " + name ". " + name " was summoned by " +
+    				"the small town of " + town + ", as they were being viciously tormented by a clan " +
+    				"of " + num + " " + villain + "s. To defeat the " + villain + "s, " + name " had to venture " +
+    				"into their lair, a dark, spooky, terrifying " location + ". Inside the cave, " + name +
+    				" was confronted by all " + num + " " + villain "s. They surrounded him, and began to " +
+    				"encroach on their intruder. They began to attack, and just when all seemed lost, the " +
+    				villain + "s " event ". Victorious, " + name + " returned to " + town + "a hero, and his " +
+    				"legend was perpetuated with stories of his quest echoed for generations to come."  
+    			);
+				return false;
+			};
+        </script>
+    </body>
+</html>
