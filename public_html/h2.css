@@ -1,0 +1,11 @@
+h2 {
+	color:#00CCFF; /* light blue */
+	background-color: #0000ff; /* dark blue */
+	text-align: center;
+}
+
+#blackText {
+	color:#000000; /* black */
+	background-color: #0000ff; /* dark blue */
+	text-align: center;
+}
