@@ -1,0 +1,47 @@
+1)
+Here is the series of IP addresses that a recursive DNS used to fine m.yelp.com
+
+128.32.78.3
+128.32.255.126
+128.32.0.66
+137.164.50.16
+137.164.22.25
+137.164.47.174
+198.32.251.154
+64.125.31.66
+64.125.30.126
+64.125.26.61
+209.66.115.62
+199.255.189.34
+
+and here is the original out put:
+
+traceroute to m.yelp.com (199.255.189.34), 30 hops max, 60 byte packets
+ 1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  1.357 ms  2.665 ms  2.697 ms
+ 2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  1.038 ms  1.089 ms  1.105 ms
+ 3  xe-5-1-0.inr-001-sut.Berkeley.EDU (128.32.0.66)  3.545 ms  3.559 ms  3.801 ms
+ 4  dc-sfo-agg-1--ucb-10ge.cenic.net (137.164.50.16)  1.437 ms  1.381 ms  1.369 ms
+ 5  oak-agg2--sfo-agg1-10g.cenic.net (137.164.22.25)  4.844 ms  4.838 ms  4.821 ms
+ 6  dc-paix-px1--oak-core1-ge.cenic.net (137.164.47.174)  3.474 ms  3.352 ms  3.417 ms
+ 7  abovenet--paix-px1.cenic.net (198.32.251.154)  3.535 ms  3.469 ms  3.518 ms
+ 8  xe-3-0-0.cr1.sjc2.us.above.net (64.125.31.66)  5.080 ms  4.935 ms  4.952 ms
+ 9  xe-0-0-0.cr2.sjc2.us.above.net (64.125.30.126)  4.737 ms  4.727 ms  4.823 ms
+10  xe-0-1-0.mpr4.sfo7.us.above.net (64.125.26.61)  5.600 ms  5.516 ms  5.512 ms
+11  209.66.115.62.t01325-02.above.net (209.66.115.62)  5.585 ms  5.630 ms  5.592 ms
+12  m.sfo1.yelp.com (199.255.189.34)  5.621 ms  5.625 ms  5.556 ms
+
+
+2)
+host m.yelp.com
+m.yelp.com has address 199.255.189.234
+m.yelp.com has address 198.51.132.234
+m.yelp.com has address 199.255.189.34
+m.yelp.com has address 198.51.132.34
+
+3) No they dont. As its been demonstrated in the out put, all of the name servers are in Berkeley network.
+traceroute to amplab.cs.berkeley.edu (128.32.37.248), 30 hops max, 60 byte packets
+ 1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  0.932 ms  0.913 ms  0.963 ms
+ 2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  2.631 ms  2.655 ms  2.762 ms
+ 3  reccev-eecs-br-10GE.EECS.Berkeley.EDU (128.32.255.58)  2.413 ms  2.460 ms  2.533 ms
+ 4  soda-10g-edge.EECS.Berkeley.EDU (169.229.59.242)  2.537 ms  2.339 ms  2.409 ms
+ 5  www-research2.CS.Berkeley.EDU (128.32.37.248)  1.707 ms !X  1.733 ms !X  1.765 ms !X
