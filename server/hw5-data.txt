@@ -1,0 +1,55 @@
+1) app.py uses GET and its arguments to set the title and name parameter in the home.html and display it to user.
+
+2) I used this request to change the redirection of /wiki
+
+PUT /wiki HTTP/1.1
+Host: localhost
+Content-length: 22
+Content-Type: application/x-www-form-urlencoded
+
+url=http://kayvann.com
+
+which resulted to:
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 29
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Thu, 03 Oct 2013 07:32:59 GMT
+
+Stored wiki => http://kayvann.com
+
+2.1) And later verified by sending a GET to /wiki which resulted in
+
+HTTP/1.0 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 243
+Location: http://kayvann.com
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Thu, 03 Oct 2013 07:29:49 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="http://kayvann.com">http://kayvann.com</a>.  If not click the link.
+
+3) I used this post request:
+
+POST /wiki HTTP/1.1
+Host: localhost
+Content-length: 18
+Content-Type: application/x-www-form-urlencoded
+
+url=http://nbc.com
+
+and got this result:
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 29
+Server: Werkzeug/0.8.3 Python/2.7.3
+Date: Thu, 03 Oct 2013 07:32:59 GMT
+
+Stored wiki => http://nbc.com
+
+4) Content-Type = 'image/png'
