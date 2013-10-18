@@ -1,0 +1,17 @@
+Following is the header of the respond to this query:
+	$ curl -o /dev/null "http://www.yelp.com"
+
+And as its been noted below the total size of download was 88969 bytes (This is a not copressed file)
+
+	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+	                                 Dload  Upload   Total   Spent    Left  Speed
+	100 88969  100 88969    0     0   157k      0 --:--:-- --:--:-- --:--:--  160k
+
+Here is the second query which accepts gzip compression
+	$ curl -o /dev/null -H "Accept-encoding:gzip" "http://www.yelp.com"
+
+And the result is with the download size of only 19013 bytes.
+
+	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+	                                 Dload  Upload   Total   Spent    Left  Speed
+	100 19013    0 19013    0     0  55269      0 --:--:-- --:--:-- --:--:-- 57441
