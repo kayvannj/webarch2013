@@ -1,0 +1,18 @@
+SELECT:
+	Query: select count(*) from links where created > "2013-10-14";
+	Result: 11
+
+	Query: 	select count(*) from links where created < "2013-10-14" and hit_count < 40;
+	Result: 6
+
+INSERT:
+	Query: insert into links values ("http://kayvann.com","kayvan",123456789,"2013-10-13");
+	Result: Query OK, 1 row affected (0.43 sec)
+
+	No, Because of Atomicity of the database, either the whole transaction will happen successfully and the data for all of the fields will be inserted, or if something goes wrong, non of the field values will be inserted.
+
+UPDATE:
+	Query: UPDATE links SET hit_count = 987654321 WHERE short_url="kayvan";
+	Result: Rows matched: 1 Changed: 1 Warning: 0
+
+	new hit_count value is 987654321
